@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArogyaLink - Your Personal Health Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Small style additions for the new dashboard */
+        .dashboard-feature { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .dashboard-feature h3 { margin-top: 0; }
+        .dashboard-feature textarea { width: 100%; min-height: 100px; padding: 10px; font-family: inherit; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px; }
+        .feature-content { margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px; }
+        #prescriptions-list a { display: block; margin-top: 8px; text-decoration: none; color: var(--primary-color); }
+        #prescriptions-list a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+   
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">ArogyaLink</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#helplines">Helplines</a></li>
+                    <li><button class="btn btn-secondary">Login</button></li>
+                    <li><button class="btn btn-primary">Sign Up</button></li>
+                </ul>
+            </nav>
+            <a href="tel:108" class="btn-sos">
+                <span>🆘</span>
+                <span class="sos-text">EMERGENCY<br>CALL 108</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>Your Personal Health Companion</h1>
+                <p>Manage prescriptions, track your health daily, and connect with doctors, all in one secure place.</p>
+                <a href="#auth-section" class="btn btn-primary btn-large">Get Started Now</a>
+            </div>
+        </section>
+
+        <section id="user-dashboard" style="display: none;">
+            <div class="container">
+                <h2>Welcome Back!</h2>
+                <p>This is your personal health dashboard.</p>
+                
+                <div class="dashboard-feature">
+                    <h3>📋 My Prescriptions</h3>
+                    <input type="file" id="prescription-file">
+                    <button id="upload-prescription-button" class="btn btn-primary">Upload</button>
+                    
+                    <button id="view-prescriptions-button" class="btn btn-secondary">View My Prescriptions</button>
+                    <div id="prescriptions-list"></div>
+                </div>
+
+                <div class="dashboard-feature">
+                    <h3>✍️ My Health Journal</h3>
+                    <textarea id="note-content" placeholder="Write your daily health update..."></textarea>
+                    <button id="save-note-button" class="btn btn-primary">Save Note</button>
+                    <button id="view-notes-button" class="btn btn-secondary">View My Past Notes</button>
+                    <div id="notes-list"></div>
+                </div>
+
+                <hr>
+                <button id="logout-button" class="btn btn-sos">Logout</button>
+            </div>
+        </section>
+        
+        <section id="auth-section" class="container">
+            <div id="signup-form">
+                <h3>Create an Account</h3>
+                <input type="email" id="signup-email" placeholder="Enter your email">
+                <input type="password" id="signup-password" placeholder="Choose a password">
+                <button id="signup-button" class="btn btn-primary">Sign Up</button>
+            </div>
+
+            <hr>
+            
+            <div id="login-form">
+                <h3>Login to Your Account</h3>
+                <input type="email" id="login-email" placeholder="Enter your email">
+                <input type="password" id="login-password" placeholder="Choose a password">
+                <button id="login-button" class="btn btn-primary">Login</button>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2>Everything You Need for Better Health</h2>
+                <div class="features-grid">
+                    <div class="feature-card" id="upload-card">
+                        <h3>📋 My Prescriptions</h3>
+                        <p>Securely upload and store all your medical prescriptions. Access them anytime, anywhere.</p>
+                    </div>
+                    <div class="feature-card" id="journal-card">
+                        <h3>✍️ My Health Journal</h3>
+                        <p>Keep a daily log of your symptoms, vitals, and feelings. Share updates easily with your doctor.</p>
+                    </div>
+                    <div class="feature-card" id="remedies-card">
+                        <h3>💊 Common Remedies Guide</h3>
+                        <p>Find information on common ailments with age-wise dosage guides.</p>
+                        <div id="remedies-content" class="feature-content"></div>
+                    </div>
+                    <div class="feature-card" id="doctor-card">
+                        <h3>👨‍⚕️ Doctor Connect</h3>
+                        <p>Browse a list of verified doctors and connect with them instantly via call or video.</p>
+                        <div id="doctors-content" class="feature-content"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="helplines" class="helpline-section">
+            <div class="container">
+                <h2>Immediate Assistance</h2>
+                <p>For medical advice or emergencies, use these public helplines.</p>
+                <div class="helpline-buttons">
+                    <a href="tel:104" class="btn-helpline">
+                        <h4>Call Health Helpline</h4>
+                        <p>104</p>
+                        <span>For medical information & advice</span>
+                    </a>
+                    <a href="tel:108" class="btn-helpline emergency">
+                        <h4>Call Emergency Services</h4>
+                        <p>108</p>
+                        <span>For medical, police & fire emergencies</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 ArogyaLink. All rights reserved.</p>
+            <p>Built with care in Hyderabad, India.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="backend.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const authSection = document.getElementById('auth-section');
+            const userDashboard = document.getElementById('user-dashboard');
+            
+            const signupButton = document.getElementById('signup-button');
+            const loginButton = document.getElementById('login-button');
+            const logoutButton = document.getElementById('logout-button');
+            
+            const uploadPrescriptionButton = document.getElementById('upload-prescription-button');
+            const saveNoteButton = document.getElementById('save-note-button');
+            const viewNotesButton = document.getElementById('view-notes-button');
+            const notesListDiv = document.getElementById('notes-list');
+            const viewPrescriptionsButton = document.getElementById('view-prescriptions-button');
+            const prescriptionsListDiv = document.getElementById('prescriptions-list');
+
+            const uploadCard = document.getElementById('upload-card');
+            const journalCard = document.getElementById('journal-card');
+            const remediesCard = document.getElementById('remedies-card');
+            const doctorsCard = document.getElementById('doctor-card');
+            const remediesContent = document.getElementById('remedies-content');
+            const doctorsContent = document.getElementById('doctors-content');
+
+            supabaseClient.auth.onAuthStateChange((event, session) => {
+                if (session) {
+                    authSection.style.display = 'none';
+                    userDashboard.style.display = 'block';
+                } else {
+                    authSection.style.display = 'block';
+                    userDashboard.style.display = 'none';
+                }
+            });
+
+            signupButton.addEventListener('click', () => {
+                const email = document.getElementById('signup-email').value;
+                const password = document.getElementById('signup-password').value;
+                signUp(email, password);
+            });
+            
+            loginButton.addEventListener('click', () => {
+                const email = document.getElementById('login-email').value;
+                const password = document.getElementById('login-password').value;
+                signIn(email, password);
+            });
+
+            logoutButton.addEventListener('click', () => {
+                signOut();
+            });
+
+            uploadPrescriptionButton.addEventListener('click', () => {
+                const file = document.getElementById('prescription-file').files[0];
+                uploadPrescription(file);
+            });
+
+            saveNoteButton.addEventListener('click', () => {
+                const noteContent = document.getElementById('note-content').value;
+                saveNote(noteContent);
+                document.getElementById('note-content').value = '';
+            });
+
+            viewNotesButton.addEventListener('click', async () => {
+                const notes = await getNotes();
+                notesListDiv.innerHTML = '<h4>Your Past Notes:</h4>';
+                if (!notes || notes.length === 0) {
+                    notesListDiv.innerHTML += '<p>No notes found.</p>';
+                } else {
+                    notes.forEach(note => {
+                        const noteElement = document.createElement('p');
+                        noteElement.innerHTML = `<strong>${new Date(note.created_at).toLocaleDateString()}:</strong> ${note.content}`;
+                        notesListDiv.appendChild(noteElement);
+                    });
+                }
+            });
+            
+            viewPrescriptionsButton.addEventListener('click', async () => {
+                const { data: { user } } = await supabaseClient.auth.getUser();
+                if (!user) return;
+                const { data: files, error } = await supabaseClient.storage.from('prescriptions').list(user.id);
+
+                if (error) {
+                    console.error("Error listing files:", error);
+                    prescriptionsListDiv.innerHTML = '<p>Could not retrieve files.</p>';
+                } else if (!files || files.length === 0) {
+                    prescriptionsListDiv.innerHTML = '<p>No prescriptions found.</p>';
+                } else {
+                    prescriptionsListDiv.innerHTML = '<h4>Your Uploaded Files:</h4>';
+                    for (const file of files) {
+                        const { data } = await supabaseClient.storage.from('prescriptions').createSignedUrl(`${user.id}/${file.name}`, 60);
+                        if (data) {
+                            const fileLink = document.createElement('a');
+                            fileLink.href = data.signedUrl;
+                            fileLink.textContent = file.name;
+                            fileLink.target = '_blank';
+                            prescriptionsListDiv.appendChild(fileLink);
+                        }
+                    }
+                }
+            });
+
+            uploadCard.addEventListener('click', async () => {
+                const { data: { session } } = await supabaseClient.auth.getSession();
+                if (session) {
+                    userDashboard.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('Please sign up or log in to use this feature.');
+                    authSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            journalCard.addEventListener('click', async () => {
+                const { data: { session } } = await supabaseClient.auth.getSession();
+                if (session) {
+                    userDashboard.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('Please sign up or log in to use this feature.');
+                    authSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            remediesCard.addEventListener('click', async () => {
+                const userAgrees = confirm(
+                    'IMPORTANT DISCLAIMER:\n\n' +
+                    'This is for informational purposes only and is NOT a substitute for professional medical advice. Do you wish to proceed?'
+                );
+                if (userAgrees) {
+                    const remedies = await getRemedies();
+                    remediesContent.innerHTML = '';
+                    remedies.forEach(r => {
+                        const remedyEl = document.createElement('div');
+                        remedyEl.innerHTML = `<h4>${r.condition}</h4><p><strong>Adults:</strong> ${r.dosage_adults}</p><p><strong>Children:</strong> ${r.dosage_children}</p><hr>`;
+                        remediesContent.appendChild(remedyEl);
+                    });
+                }
+            });
+
+            doctorsCard.addEventListener('click', async () => {
+                const doctors = await getDoctors();
+                doctorsContent.innerHTML = '';
+                doctors.forEach(d => {
+                    const doctorEl = document.createElement('div');
+                    doctorEl.innerHTML = `<h4>${d.name} - ${d.specialization}</h4><p><a href="tel:${d.phone_number}">Call Now</a> | <a href="${d.video_call_link}" target="_blank">Video Call</a></p><hr>`;
+                    doctorsContent.appendChild(doctorEl);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

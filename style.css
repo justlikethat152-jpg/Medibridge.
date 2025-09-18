@@ -1,0 +1,260 @@
+/* --- Global Styles --- */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --white-color: #fff;
+    --emergency-red: #d9534f;
+    --success-green: #28a745;
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+.main-header {
+    background-color: var(--white-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Buttons --- */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+.btn-secondary:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-large {
+    font-size: 1.1em;
+    padding: 15px 30px;
+}
+
+.btn-sos {
+    background-color: var(--emergency-red);
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+.btn-sos:hover {
+    background-color: #c9302c;
+}
+.btn-sos span:first-child {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+.btn-sos .sos-text {
+    font-size: 0.8em;
+    line-height: 1.2;
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(rgba(0, 123, 255, 0.1), rgba(0, 123, 255, 0)), url('https://www.transparenttextures.com/patterns/clean-gray-paper.png');
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    color: #555;
+}
+
+/* --- Features Section --- */
+.features-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: var(--white-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.feature-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* --- Helpline Section --- */
+.helpline-section {
+    background-color: #e9ecef;
+    padding: 60px 0;
+    text-align: center;
+}
+.helpline-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.btn-helpline {
+    display: block;
+    background-color: var(--white-color);
+    padding: 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-color);
+    width: 280px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+.btn-helpline:hover {
+    transform: translateY(-5px);
+}
+.btn-helpline h4 {
+    margin: 0;
+    font-size: 1.2em;
+}
+.btn-helpline p {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+.btn-helpline.emergency p {
+    color: var(--emergency-red);
+}
+.btn-helpline span {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #343a40;
+    color: var(--white-color);
+    text-align: center;
+    padding: 30px 0;
+}
+.main-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* --- Responsiveness for Mobile --- */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+    }
+    .main-nav {
+        margin-top: 15px;
+    }
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+    .sos-text {
+        display: none; /* Hide text on small screens */
+    }
+    .btn-sos span:first-child {
+        margin-right: 0;
+    }
+}
