@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medibridge - Your Personal Health Companion</title>
+    <title>MediBridge - Your Personal Health Companion</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
    
     <header class="main-header">
         <div class="container">
-            <a href="#" class="logo">Medibridge</a>
+            <a href="#" class="logo">MediBridge</a>
             <nav class="main-nav">
                 <ul>
                     <li><a href="#features">Features</a></li>
@@ -105,8 +105,8 @@
                         <p>Keep a daily log of your symptoms, vitals, and feelings. Share updates easily with your doctor.</p>
                     </div>
                     <div class="feature-card" id="remedies-card">
-                        <h3>💊 Common Remedies Guide</h3>
-                        <p>Find information on common ailments with age-wise dosage guides.</p>
+                        <h3>🌿 Ayurvedic Remedies Guide</h3>
+                        <p>Discover Ayurvedic remedies for common ailments with age-wise dosage guides.</p>
                         <div id="remedies-content" class="feature-content"></div>
                     </div>
                     <div class="feature-card" id="doctor-card">
@@ -140,7 +140,7 @@
 
     <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2025 ArogyaLink. All rights reserved.</p>
+            <p>&copy; 2025 MediBridge. All rights reserved.</p>
             <p>Built with care in Hyderabad, India.</p>
         </div>
     </footer>
@@ -278,7 +278,15 @@
                     remediesContent.innerHTML = '';
                     remedies.forEach(r => {
                         const remedyEl = document.createElement('div');
-                        remedyEl.innerHTML = `<h4>${r.condition}</h4><p><strong>Adults:</strong> ${r.dosage_adults}</p><p><strong>Children:</strong> ${r.dosage_children}</p><hr>`;
+                        // UPDATED LOGIC TO DISPLAY AYURVEDIC REMEDIES
+                        remedyEl.innerHTML = `
+                            <h4>${r.illness}</h4>
+                            <p><strong>Infants (0-2 yrs):</strong> ${r.remedy_infants}</p>
+                            <p><strong>Children (3-12 yrs):</strong> ${r.remedy_children}</p>
+                            <p><strong>Adults (13-59 yrs):</strong> ${r.remedy_adults}</p>
+                            <p><strong>Elderly (60+ yrs):</strong> ${r.remedy_elderly}</p>
+                            <hr>
+                        `;
                         remediesContent.appendChild(remedyEl);
                     });
                 }
@@ -297,6 +305,4 @@
     </script>
 
 </body>
-
 </html>
-
