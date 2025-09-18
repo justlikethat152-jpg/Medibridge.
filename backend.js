@@ -139,9 +139,10 @@ async function getNotes() {
  * =========================================
  */
 
-// Get the list of all remedies
+// Get the list of all Ayurvedic remedies
 async function getRemedies() {
-    const { data, error } = await supabaseClient.from('remedies').select('*');
+    // Fetching from the new 'ayurvedic_remedies' table
+    const { data, error } = await supabaseClient.from('ayurvedic_remedies').select('*');
     if (error) {
         alert("Error fetching remedies: " + error.message);
         return [];
