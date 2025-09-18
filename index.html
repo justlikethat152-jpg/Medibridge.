@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Small style additions for the new dashboard */
         .dashboard-feature { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .dashboard-feature h3 { margin-top: 0; }
         .dashboard-feature textarea { width: 100%; min-height: 100px; padding: 10px; font-family: inherit; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 10px; }
@@ -110,8 +109,8 @@
                         <div id="remedies-content" class="feature-content"></div>
                     </div>
                     <div class="feature-card" id="doctor-card">
-                        <h3>👨‍⚕️ Doctor Connect</h3>
-                        <p>Browse a list of verified doctors and connect with them instantly via call or video.</p>
+                        <h3>👨‍⚕️ Ayurvedic Doctor Connect</h3>
+                        <p>Browse a list of verified Ayurvedic practitioners and connect with them instantly.</p>
                         <div id="doctors-content" class="feature-content"></div>
                     </div>
                 </div>
@@ -278,7 +277,6 @@
                     remediesContent.innerHTML = '';
                     remedies.forEach(r => {
                         const remedyEl = document.createElement('div');
-                        // UPDATED LOGIC TO DISPLAY AYURVEDIC REMEDIES
                         remedyEl.innerHTML = `
                             <h4>${r.illness}</h4>
                             <p><strong>Infants (0-2 yrs):</strong> ${r.remedy_infants}</p>
@@ -297,6 +295,7 @@
                 doctorsContent.innerHTML = '';
                 doctors.forEach(d => {
                     const doctorEl = document.createElement('div');
+                    // CHANGE 2: Updated the dynamic HTML to show specialization
                     doctorEl.innerHTML = `<h4>${d.name} - ${d.specialization}</h4><p><a href="tel:${d.phone_number}">Call Now</a> | <a href="${d.video_call_link}" target="_blank">Video Call</a></p><hr>`;
                     doctorsContent.appendChild(doctorEl);
                 });
